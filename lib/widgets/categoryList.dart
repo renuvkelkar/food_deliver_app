@@ -46,6 +46,10 @@ class _CategoryListState extends State<CategoryList> {
 
                                     CrossAxisAlignment.start,
 
+
+                                   
+
+
                                     children: [
                                       Text(
                                         menuList[index].itemName,
