@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 
+import 'map.dart';
+
 class location extends StatefulWidget {
 
   final List<String> list = ["Lorem ipsum dolor sit","Lorem ipsum dolor sit","Lorem ipsum dolor sit","Lorem ipsum dolor sit","Lorem ipsum dolor sit"];
@@ -115,7 +117,14 @@ class _locationState extends State<location> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Icon(Icons.location_on_sharp, color: Colors.yellow,size: 50,),
+                    child: InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => map()));
+                        },
+                        child: Icon(
+                          Icons.location_on_sharp, color: Colors.yellow,
+                          size: 50,)),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),

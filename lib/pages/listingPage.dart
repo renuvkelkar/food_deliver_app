@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
+import 'location.dart';
+
 class ListingPage extends StatefulWidget {
   @override
   _ListingPageState createState() => _ListingPageState();
@@ -130,7 +132,12 @@ class _ListingPageState extends State<ListingPage> {
                                             color: Colors.white,
                                             size: 32,
                                           ),
-                                          onPressed: () {})
+                                          onPressed: () {
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
+                                                    builder: (_) =>
+                                                        location()));
+                                          })
                                     ],
                                   ),
                                 ),
