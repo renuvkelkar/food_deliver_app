@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fooddeliverapp/model/FoodMenu.dart';
+import 'package:fooddeliverapp/pages/listingPage.dart';
+
 
 
 class CategoryList extends StatefulWidget {
@@ -18,6 +20,12 @@ class _CategoryListState extends State<CategoryList> {
               itemCount: menuList.length,
               itemBuilder: (context, index) {
                 return InkWell(
+
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => ListingPage()));
+                  },
+
                   splashColor: Colors.white,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -35,7 +43,9 @@ class _CategoryListState extends State<CategoryList> {
                                 child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+
+                                    CrossAxisAlignment.start,
+
                                     children: [
                                       Text(
                                         menuList[index].itemName,

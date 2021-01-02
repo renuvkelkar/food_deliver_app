@@ -59,7 +59,7 @@ class _ListingPageState extends State<ListingPage> {
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 15,
                   ),
                 )
               : TextField(
@@ -95,48 +95,51 @@ class _ListingPageState extends State<ListingPage> {
                     SizedBox(
                       width: 10,
                     ),
-                    Container(
-                      height: 60,
-                      width: 320,
-                      //   color: Colors.yellowAccent,
-                      child: ListView.builder(
-                        itemCount: category.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.yellow[600],
-                              ),
-                              height: 70,
-                              width: 110,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      category[index],
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 17,
-                                          color: Colors.white),
-                                    ),
-                                    IconButton(
-                                        icon: Icon(
-                                          Icons.arrow_drop_down_outlined,
-                                          color: Colors.white,
-                                          size: 32,
-                                        ),
-                                        onPressed: () {})
-                                  ],
+                    Expanded(
+                      child: Container(
+                        height: 60,
+
+                        //   color: Colors.yellowAccent,
+                        child: ListView.builder(
+
+                          itemCount: category.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.yellow[600],
+                                ),
+                                height: 70,
+                                //width: 110,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        category[index],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 17,
+                                            color: Colors.white),
+                                      ),
+                                      IconButton(
+                                          icon: Icon(
+                                            Icons.arrow_drop_down_outlined,
+                                            color: Colors.white,
+                                            size: 32,
+                                          ),
+                                          onPressed: () {})
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
+                            );
+                          },
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                        ),
                       ),
                     ),
                   ],
@@ -190,53 +193,60 @@ class _ListingPageState extends State<ListingPage> {
                                           )),
                                     ),
                                     //  SizedBox(width: 10,),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            product[index],
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15.0),
-                                          ),
-                                          SizedBox(height: 5,),
-                                          Text(subtitle[index]),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Container(
-                                              height: 28,
-                                              width: 180,
-                                              //color: Colors.grey,
-                                              child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                                                children: [
-                                                  Text(
-                                                    price[index],
-                                                    style: TextStyle(
-                                                        fontSize: 22,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                SmoothStarRating(
-                                                  isReadOnly: true,
-                                                  size: 20.0,
-                                                  color: Colors.yellow,
-                                                  rating: initialRating[index],
-                                                  borderColor: Colors.black,
-                                                )
-                                                ],
-                                              ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          children: [
+                                            Text(
+                                              product[index],
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 15.0),
                                             ),
-                                          )
-                                        ],
+                                            SizedBox(height: 5,),
+                                            Text(subtitle[index]),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(
+                                                  8.0),
+                                              child: Container(
+                                                height: 28,
+                                                width: 180,
+                                                //color: Colors.grey,
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment
+                                                      .spaceBetween,
+
+                                                  children: [
+                                                    Text(
+                                                      price[index],
+                                                      style: TextStyle(
+                                                          fontSize: 22,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 10,
+                                                    ),
+                                                    Expanded(
+                                                      child: SmoothStarRating(
+                                                        isReadOnly: true,
+                                                        size: 12.0,
+                                                        color: Colors.yellow,
+                                                        rating: initialRating[index],
+                                                        borderColor: Colors
+                                                            .black,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     )
                                   ],
