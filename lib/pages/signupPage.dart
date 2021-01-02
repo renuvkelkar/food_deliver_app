@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooddeliverapp/pages/verificationPage.dart';
 
 
 class signupPage extends StatefulWidget {
@@ -119,8 +120,12 @@ class _signupPageState extends State<signupPage> {
               width:200,
               child: FlatButton(
                 onPressed: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => VerificationPage()));
                 },
-                child: Text("Lorem ipsum",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),),
+                child: Text("SignUp", style: TextStyle(color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),),
               ),
             ),
 
